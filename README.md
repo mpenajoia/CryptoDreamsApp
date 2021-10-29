@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Schedule
 
-## Available Scripts
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1| Project Description | Complete
+|Day 1| Wireframes / React Arch Map | Complete
+|Day 3| Core Application Structure | Incomplete
+|Day 4| MVP & Bug Fixes | Incomplete
+|Day 5| Final Touches | Incomplete
+|Day 6| Present | Incomplete
 
-In the project directory, you can run:
+## Project Links
 
-### `npm start`
+- [add your github repo link]()
+- [add your deployment link]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The final product for this project will be an app to reflect current and past pricing for a select few (as a default) cryptocurrencies whose information is being pulled from a public API. A search/input bar will ask the user for a dollar amount which, after submission, will return values, after some math logic, for how much the inputted amount would have gained/lost had it being invested in the selected cryptocurrency in the past hour, day, week and month. Optionally, there will be an option to add/search for a cryptocurrency that the user might be interested in running the same logic on. Lastly, the app will be mobile first and responsive to bigger screen sizes.
 
-### `npm test`
+## API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Coingecko.com provides an public API with all the information I need for this project. 
 
-### `npm run build`
+ - [https://www.coingecko.com/en/api/documentation](Coingecko)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+{
+id: "bitcoin",
+symbol: "btc",
+name: "Bitcoin",
+asset_platform_id: null,
+platforms: {
+: ""
+},
+block_time_in_minutes: 10,
+hashing_algorithm: "SHA-256",
+categories: [
+"Cryptocurrency"
+],
+public_notice: null,
+additional_notices: [ ],
+localization: {},
+description: {},
+links: {},
+image: {
+thumb: "https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579",
+small: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
+large: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
+},
+country_origin: "",
+genesis_date: "2009-01-03",
+sentiment_votes_up_percentage: 77.84,
+sentiment_votes_down_percentage: 22.16,
+market_cap_rank: 1,
+coingecko_rank: 2,
+coingecko_score: 81.411,
+developer_score: 101.306,
+community_score: 73.064,
+liquidity_score: 100.054,
+public_interest_score: 0,
+market_data: {},
+community_data: {},
+developer_data: {},
+public_interest_stats: {
+alexa_rank: 9440,
+bing_matches: null
+},
+status_updates: [ ],
+last_updated: "2021-10-29T01:29:11.928Z",
+tickers: []
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Wireframes
 
-### `npm run eject`
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Wireframe](https://res.cloudinary.com/ds2rdojzc/image/upload/v1635525068/CryptoDreamsApp/IMG_4452_inhkod.jpg)
+- [React Architecture](https://res.cloudinary.com/ds2rdojzc/image/upload/a_090/v1635525069/CryptoDreamsApp/IMG_4453_le0ezp.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### MVP/PostMVP:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### MVP 
+- Use external API 
+- Render price data on page 
+- Allow user to toggle between pre-set cryptocurrencies
+- Allow user to input a number value
+- Render updated price calculations
+- Aesthetically pleasing design
 
-## Learn More
+#### PostMVP 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add ability for user to search a specific cryptocurrencies to run same pricing logic
+- Different color themes for the pre-selected options and a neutral color theme for any user added cryptocurrency 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Component | Description | 
+| --- | :---: |  
+| App | This will make the initial data pull and include React Router| 
+| Header | This will render the header housing the nav and remain across all pages | 
+| Footer | This will render the footer and remain across all pages |
+| Main | This will render the main content of the About, Wrapper and Content Components |
+| About | Description about the app |
+| Contact | Contact Info |
+| Wrapper | Will render the Sidebar and Content Components | 
+| Sidebar | Will render 5 pre-selected crypto links to change the Content component possible option to add a crypto, the option will render the Additional component |
+| Additional | Renders in the Content component with a search bar and search results with an Add button to Add option to Sidebar |
+| Content | Will render pricing information for the selected crypto from the Sidebar and the Input Component OR the Additional component if selected |
+| Input| Input bar to take user submitted value to run logic for results to populate in the pricing breakdowns  |
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## MVP
 
-### Advanced Configuration
+| Component | Priority | Estimated Time | Time Invested |
+| --- | :---: |  :---: | :---: | 
+| Pulling Api data | H | 2hrs|  hrs | 
+| Making components and linking/routing them correctly | H | 6hrs|  hrs | 
+| About/Contact/Footer/Nav | H | 3hrs|  hrs | 
+| Populating Api data correctly | H | 5hrs|  hrs | 
+| Taking user input value to run math logic and return results | H | 5hrs|  hrs | 
+| Aesthetics/CSS | H | 7hrs|  hrs | 
+| Responsiveness | H | 4hrs|  hrs | 
+| Correct use of React Hooks | H | 4hrs|  hrs | 
+| Correct use of methods | H | 4hrs|  hrs | 
+| Total | H | 40hrs| hrs |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Post MVP
 
-### Deployment
+| Component | Priority | Estimated Time | Time Invested |
+| --- | :---: |  :---: | :---: | 
+| Ability for user to search for their own crypto | H | 6hrs|  hrs | 
+| Some easter eggs | H | 2hrs|  hrs |  
+| Total | H | 8hrs| hrs |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Additional Libraries
+ TBD 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Code Snippet
+
+TBD 
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```

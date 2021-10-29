@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  // const url = 'serum'
+  const [coinList, setCoinList] = useState([]);
+  const makeApiCall = () => {
+    // fetch(`https://api.coingecko.com/api/v3/coins/${url}`)
+    fetch(`https://api.coingecko.com/api/v3/coins/`)
+    .then(response => response.json())
+    .then((data) => {setCoinList(data)})
+  }
+
+  useEffect(()=> {
+    makeApiCall()
+    
+  }, [])
+  
+  // console.log('coinList: ', coinList[6].name)
+  const selectedArray = coinList.filter((other) => {
+    if(other.id === 'bitcoin' || other.id === 'ripple'){
+    console.log(other)
+    }
+  })
+  // setCoinList(selectedArray)
+  // const selectedArray = coinList.filter((other) => {
+  //   if(other === 'bitcoin'){
+      
+  //   return(
+  //       other
+  //     )
+  //   }
+// })
+
+  const mapThrough = coinList.map(item => <p>{item.id}</p>)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {mapThrough}
     </div>
   );
 }
