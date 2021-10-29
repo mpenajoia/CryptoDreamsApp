@@ -77,8 +77,6 @@ tickers: []
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
-
 - [Wireframe](https://res.cloudinary.com/ds2rdojzc/image/upload/v1635525068/CryptoDreamsApp/IMG_4452_inhkod.jpg)
 - [React Architecture](https://res.cloudinary.com/ds2rdojzc/image/upload/a_090/v1635525069/CryptoDreamsApp/IMG_4453_le0ezp.jpg)
 
