@@ -22,7 +22,7 @@ function App() {
   // }, [])
   
   // const selectedArray = coinList.filter((other) => {
-  //   if(other.id === 'bitcoin' || other.id === 'ripple'){
+  //   if(other.symbol === 'btc' || other.symbol === 'eth' || other.symbol === 'sol' || other.symbol === 'ada' || other.symbol === 'dot'){
   //   console.log(other)
   //   }
   // })
