@@ -7,6 +7,15 @@ import Contact from '../Contact/Contact';
 import Main from '../Main/Main';
 
 function App() {
+  const handleTest = () => {
+    // makeApiCall()
+    console.log('test button working')
+  }
+
+  const handleMoney = () => {
+    console.log('Button is working')
+  }
+
   // const url = 'serum'
   // const [coinList, setCoinList] = useState([]);
   // const makeApiCall = () => {
@@ -23,9 +32,13 @@ function App() {
   
   // const selectedArray = coinList.filter((other) => {
   //   if(other.symbol === 'btc' || other.symbol === 'eth' || other.symbol === 'sol' || other.symbol === 'ada' || other.symbol === 'dot'){
-  //   console.log(other)
+  //     console.log (other.name)
+  //     // return (
+  //     //   <p>{other.name}</p>
+  //     // )
   //   }
   // })
+  // console.log('selectedAray: ', selectedArray);
 
   // const mapThrough = coinList.map(item => <p>{item.id}</p>)
   
@@ -45,8 +58,10 @@ function App() {
         </ul>
       </nav>
       <main>
+        <button onClick={handleTest}>Test Me</button>
+        {/* {selectedArray} */}
         {/* Route to homepage */}
-        <Route exact path="/" component={Main}/>
+        <Route exact path="/" render={(routerProps) => <Main {...routerProps} handleMoney={handleMoney}/>}/>
         {/* Route to About page */}
         <Route exact path="/about" component={About}/>
         {/* Route to Contact page */}
