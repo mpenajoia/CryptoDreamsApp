@@ -1,0 +1,32 @@
+.live-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+.live-price-block {
+    background-color: #596170;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 10px;
+}
+button {
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    color: #D7DDE8 ;
+    background-color: #484e59;
+}
+input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px ;
+    color: #D7DDE8;
+    border-bottom: 1px solid #596170;
+    width: 40%;
+}
+input::placeholder {
+    color: #D7DDE8;
+}

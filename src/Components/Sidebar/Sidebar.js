@@ -1,6 +1,9 @@
+import './Sidebar.css'
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Sidebar = (props) => {
+    // console.log('sidebar props: ', props.defaultSideArray)
 
     // make a useState that is an array of the current selection for the li's below similar to the example below
     // const [defaultList, setDefaultList] = useState(['btc', 'eth', 'dot', 'sol', 'ada'])
@@ -8,15 +11,16 @@ const Sidebar = (props) => {
     // for example const newSideBarOptions = setDefaultList([...defaultList, added crypto])
     // the li's below will be replaced with a function thats maps through the useState's array to list an li for each of the items in the array
 
+
+    const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.thumb} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+
+    
+
     return (
-        <div>
-            <h2>Sidebar Stuff</h2>
+        <div className="sidebar">
+            
             <ul>
-                <li><span className="crypt-ticker">BTC</span> <img src="" alt="BTC"/></li>
-                <li><span className="crypt-ticker">ETH</span> <img src="" alt="BTC"/></li>
-                <li><span className="crypt-ticker">SOL</span> <img src="" alt="BTC"/></li>
-                <li><span className="crypt-ticker">ADA</span> <img src="" alt="BTC"/></li>
-                <li><span className="crypt-ticker">DOT</span> <img src="" alt="BTC"/></li>
+                {sidebarMap}
             </ul>
         </div>
     )
