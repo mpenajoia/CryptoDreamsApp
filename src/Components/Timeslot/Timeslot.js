@@ -5,6 +5,7 @@ const Timeslot = (props) => {
     const tokens = props.liveBlockDetails.symbol.toUpperCase()
     //variable storing user-input-amount
     const userInput = props.sendAmount
+    console.log(userInput)
     //variable for today-price
     const currentPrice = props.liveBlockDetails.market_data.current_price.usd
     //variables for the %-time-change 
@@ -38,16 +39,23 @@ const Timeslot = (props) => {
     const monthGainLoss = (monthTotalValue - userInput).toFixed(2)
     const yearGainLoss = (yearTotalValue - userInput).toFixed(2)
 
-    const timeslotArray = ['Day', 'Week', 'Month', 'Year']
-    const timeslotMap = timeslotArray.map((item) => {
-        return (
+    // variable of objects per time frame
+    const dayVariables = {time: 'Day', gainLoss: dayGainLoss, totalValue: dayTotalValue, tokenAmount: dayTokens}
+    const weekVariables = {time: 'Week', gainLoss: weekGainLoss, totalValue: weekTotalValue, tokenAmount: weekTokens}
+    const monthVariables = {time: 'Month', gainLoss: monthGainLoss, totalValue: monthTotalValue, tokenAmount: monthTokens}
+    const yearVariables = {time: 'Year', gainLoss: yearGainLoss, totalValue: yearTotalValue, tokenAmount: yearTokens}
+
+    //Array of time objects
+    const timeVariablesArray = [dayVariables, weekVariables, monthVariables, yearVariables]
+    const timeVariablesMap = timeVariablesArray.map((item) => {
+        return(
             <div className="price-block">
-                <h3>A {item} Ago</h3>
+                <h3>A {item.time} Ago</h3>
                 {/* style={item.change > 0 ? {color:'green'} : {color:'red'}}>{item.change} */}
-                <h2 style={dayGainLoss > 0 ? {color:'green'} : {color:'red'}}>{dayGainLoss}</h2>
-                <h3>${dayTotalValue}</h3>
+                <h2 style={item.gainLoss > 0 ? {color:'green'} : {color:'red'}}>{item.gainLoss}</h2>
+                <h3>${item.totalValue}</h3>
                 <p>Your investment would be worth</p>
-                <p className="tokens">You would have {dayTokens} {tokens}'s</p>
+                <p className="tokens">You would have {item.tokenAmount} {tokens}'s</p>
             </div>
         )
     })
@@ -56,7 +64,7 @@ const Timeslot = (props) => {
         <>
             {/* token quantity will have to be .toFixed(5) */}
             <div className="price-block-wrapper">
-                {timeslotMap}
+                {timeVariablesMap}
             </div>
         </>
     )
