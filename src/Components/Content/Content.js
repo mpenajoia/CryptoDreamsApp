@@ -1,9 +1,12 @@
 import './Content.css'
 import { useParams } from "react-router"
-import { useEffect, useReducer, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Timeslot from "../Timeslot/Timeslot"
 
 const Content = (props) => {
+
+    const [inputAmount, setInputAmount] = useState();
+    const [sendAmount, setSendAmount] = useState();
 
     let { sym } = useParams();
     const singleCrypto = props.sym
@@ -33,21 +36,39 @@ const Content = (props) => {
         liveSymbol='loading'
     }
     
-    const dollarAmount = useRef()
-    const [moneyInputValue, setMoneyInputValue] = useState('')
-    const handleMoneyInputChange = (event) => {
-        event.preventDefault()
-        setMoneyInputValue(event.target.value)
-    }
-    const handleMoney = (event) => {
-        console.log('handleMoney:',moneyInputValue)
-    }
-    const [returnedAmount, setReturnedAmount] = useState()
-    const handleClick =(event) => {
-        console.log(dollarAmount)
-        setReturnedAmount(dollarAmount)
-    }
+
+    //Attempt at input bar
+    // const dollarAmount = useRef()
+    // const [moneyInputValue, setMoneyInputValue] = useState('')
+    // const handleMoneyInputChange = (event) => {
+    //     event.preventDefault()
+    //     setMoneyInputValue(event.target.value)
+    // }
+    // const handleMoney = (event) => {
+    //     console.log('handleMoney:',moneyInputValue)
+    // }
+    // const [returnedAmount, setReturnedAmount] = useState()
+    // const handleClick =(event) => {
+    //     console.log(dollarAmount)
+    //     setReturnedAmount(dollarAmount)
+    // }
     
+    // const inputAmount = useRef()
+    const handleOnChange = (event) => {
+        event.preventDefault();
+        setInputAmount(event.target.value)
+        console.log(inputAmount)
+    }
+
+    const handleSubmitAmount = (event) => {
+        event.preventDefault();
+        if(isNaN(inputAmount)){
+            console.log('thats not going to math')
+        }else{
+            setSendAmount(inputAmount)
+        }
+    }
+
     
     return (
         <>
@@ -62,15 +83,18 @@ const Content = (props) => {
                     <div className="amount-input">
                         <p className="how-much">How much did you miss out on?</p>
                     {/* <form onSubmit={handleMoney(moneyInputValue)}> */}
-                        <input useRef={dollarAmount} type="text" placeholder="Enter amount"/>
+                        <form onSubmit={handleSubmitAmount}>
+                            <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="10" />
+                        </form>
+                        {/* <input useRef={dollarAmount} type="text" placeholder="Enter amount"/> */}
                         {/* <input onChange={handleMoneyInputChange} value={moneyInputValue} type="text" placeholder="Enter amount"/> */}
-                        <button onClick={handleClick}>Enter</button>
-                        <h1>{returnedAmount}</h1>
+                        {/* <button onClick={handleClick}>Enter</button> */}
+                        {/* <h1>{returnedAmount}</h1> */}
                     {/* </form> */}
                     </div>
                     {/* another if conditional when amount is input for the following to appear */}
                     <div>
-                        <Timeslot liveBlockDetails={liveBlockDetails}/>
+                        <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
                     </div>
                 </div>
             </div>

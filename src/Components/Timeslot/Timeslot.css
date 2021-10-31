@@ -3,3 +3,15 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
+.price-block {
+    background-color: #484e59;
+    background: linear-gradient(135deg, rgba(45,51,48,1) 0%, rgba(61,68,78,1) 100%);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 10px;
+}
+.tokens {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin: 40px 10px 20px 10px;
+}

@@ -18,14 +18,17 @@
 .live-price-block h1 {
     font-size: 2.7em;
     margin: 5px 0 5px 15px;
+    align-self: end;
 }
 .live-price-block h3 {
     font-size: 1.7em;
     margin: 5px 0 5px 15px;
+    align-self: end;
 }
 .small-detail-info {
     font-size: 1em;
     margin: 5px 0 5px 15px;
+    align-self: end;
 }
 .how-much {
     font-size: 1.4em;
@@ -44,7 +47,6 @@ button {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 
-    
 }
 input {
     background: none;
@@ -53,8 +55,10 @@ input {
     padding: 5px 0px 8px 5px;
     color: #D7DDE8;
     border-bottom: 1px solid #596170;
-    width: 67%;
+    width: 90%;
     font-size: 1.3em;
+    margin: 0 10px;
+    text-align: center;
 }
 input::placeholder {
     color: #D7DDE8;
