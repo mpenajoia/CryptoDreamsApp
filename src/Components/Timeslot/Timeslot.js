@@ -5,7 +5,6 @@ const Timeslot = (props) => {
     const tokens = props.liveBlockDetails.symbol.toUpperCase()
     //variable storing user-input-amount
     const userInput = props.sendAmount
-    
     //variable for today-price
     const currentPrice = props.liveBlockDetails.market_data.current_price.usd
     //variables for the %-time-change 
@@ -45,8 +44,9 @@ const Timeslot = (props) => {
             <div className="price-block">
                 <h3>A {item} Ago</h3>
                 {/* style={item.change > 0 ? {color:'green'} : {color:'red'}}>{item.change} */}
-                <h2>{dayGainLoss}</h2>
+                <h2 style={dayGainLoss > 0 ? {color:'green'} : {color:'red'}}>{dayGainLoss}</h2>
                 <h3>${dayTotalValue}</h3>
+                <p>Your investment would be worth</p>
                 <p className="tokens">You would have {dayTokens} {tokens}'s</p>
             </div>
         )

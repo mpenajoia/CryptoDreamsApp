@@ -60,12 +60,14 @@ const Content = (props) => {
         console.log(inputAmount)
     }
 
+    const [showTimeslots, setShowTimeslots] = useState(false)
     const handleSubmitAmount = (event) => {
         event.preventDefault();
         if(isNaN(inputAmount)){
-            console.log('thats not going to math')
+            setShowTimeslots(false)
         }else{
             setSendAmount(inputAmount)
+            setShowTimeslots(true)
         }
     }
 
@@ -94,7 +96,10 @@ const Content = (props) => {
                     </div>
                     {/* another if conditional when amount is input for the following to appear */}
                     <div>
+                        {showTimeslots ? 
                         <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
+                        : <p>Please enter a valid number</p>
+                        }
                     </div>
                 </div>
             </div>
