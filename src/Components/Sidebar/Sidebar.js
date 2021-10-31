@@ -12,6 +12,8 @@ const Sidebar = (props) => {
     // the li's below will be replaced with a function thats maps through the useState's array to list an li for each of the items in the array
 
 
+    // fetch api call when user inputs from a search
+
     const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
 
     
@@ -21,6 +23,8 @@ const Sidebar = (props) => {
             
             <ul>
                 {sidebarMap}
+                {/* render the second array thats mapped over of newly added cryto's */}
+                {/* hard code an add crypto button in an li */}
             </ul>
         </div>
     )

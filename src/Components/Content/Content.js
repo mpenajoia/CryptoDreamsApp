@@ -1,14 +1,11 @@
 import './Content.css'
-import { useParams } from "react-router"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Timeslot from "../Timeslot/Timeslot"
 
 const Content = (props) => {
-
     const [inputAmount, setInputAmount] = useState();
     const [sendAmount, setSendAmount] = useState();
 
-    let { sym } = useParams();
     const singleCrypto = props.sym
     const [liveBlockDetails, setLiveBlockDetails] = useState({})
     const indvApiCall = () => {
@@ -36,41 +33,23 @@ const Content = (props) => {
         liveSymbol='loading'
     }
     
-
-    //Attempt at input bar
-    // const dollarAmount = useRef()
-    // const [moneyInputValue, setMoneyInputValue] = useState('')
-    // const handleMoneyInputChange = (event) => {
-    //     event.preventDefault()
-    //     setMoneyInputValue(event.target.value)
-    // }
-    // const handleMoney = (event) => {
-    //     console.log('handleMoney:',moneyInputValue)
-    // }
-    // const [returnedAmount, setReturnedAmount] = useState()
-    // const handleClick =(event) => {
-    //     console.log(dollarAmount)
-    //     setReturnedAmount(dollarAmount)
-    // }
-    
-    // const inputAmount = useRef()
     const handleOnChange = (event) => {
         event.preventDefault();
         setInputAmount(event.target.value)
-        console.log(inputAmount)
     }
-
+    const [error, setError] = useState(true)
     const [showTimeslots, setShowTimeslots] = useState(false)
     const handleSubmitAmount = (event) => {
         event.preventDefault();
         if(isNaN(inputAmount)){
             setShowTimeslots(false)
+            setError(false)
         }else{
             setSendAmount(inputAmount)
             setShowTimeslots(true)
+            setError(true)
         }
     }
-
     
     return (
         <>
@@ -83,37 +62,22 @@ const Content = (props) => {
                         <p className="small-detail-info">Market Cap: ${marketCap}</p>
                     </div>
                     <div className="amount-input">
-                        <p className="how-much">How much did you miss out on?</p>
-                    {/* <form onSubmit={handleMoney(moneyInputValue)}> */}
+                        <p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
                         <form onSubmit={handleSubmitAmount}>
                             <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="10" />
                         </form>
-                        {/* <input useRef={dollarAmount} type="text" placeholder="Enter amount"/> */}
-                        {/* <input onChange={handleMoneyInputChange} value={moneyInputValue} type="text" placeholder="Enter amount"/> */}
-                        {/* <button onClick={handleClick}>Enter</button> */}
-                        {/* <h1>{returnedAmount}</h1> */}
-                    {/* </form> */}
                     </div>
-                    {/* another if conditional when amount is input for the following to appear */}
                     <div>
                         {showTimeslots ? 
                         <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
-                        : <p>Please enter a valid number</p>
+                        : ''
                         }
                     </div>
                 </div>
             </div>
                 : 
                 ''
-                // <div className="live-price-block">
-                //     <h3>Bitcoin</h3>
-                //     <h2>${livePrice}</h2>
-                // </div>
-            
             }
-             {/* <div className="breakdowns"> */}
-                 {/* <Timeslot /> */}
-             {/* </div> */}
         </>
     )
 }
