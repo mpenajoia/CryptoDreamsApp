@@ -12,7 +12,7 @@ const Sidebar = (props) => {
     // the li's below will be replaced with a function thats maps through the useState's array to list an li for each of the items in the array
 
 
-    const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.thumb} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+    const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
 
     
 

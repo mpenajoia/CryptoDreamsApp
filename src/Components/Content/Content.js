@@ -20,14 +20,17 @@ const Content = (props) => {
     let livePrice
     let liveName
     let marketCap
+    let liveSymbol
     if(liveBlockDetails.market_data){
         livePrice = liveBlockDetails.market_data.current_price.usd.toFixed(2)
         liveName = liveBlockDetails.name
         marketCap = liveBlockDetails.market_data.market_cap.usd.toLocaleString()
+        liveSymbol = liveBlockDetails.symbol.toUpperCase()
     }else{
         livePrice = 'loading'
         liveName='loading'
         marketCap='loading'
+        liveSymbol='loading'
     }
     
     const dollarAmount = useRef()
@@ -50,13 +53,14 @@ const Content = (props) => {
         <>
             {liveName !== 'loading' ?
             <div className="live-section">
-                
+                <div>
                     <div className="live-price-block">
-                        <h3>{liveName}</h3>
-                        <h2>${livePrice}</h2>
+                        <h3>{liveName} ({liveSymbol})</h3>
+                        <h1>${livePrice}</h1>
                         <p className="small-detail-info">Market Cap: ${marketCap}</p>
                     </div>
-                    <div>
+                    <div className="amount-input">
+                        <p className="how-much">How much did you miss out on?</p>
                     {/* <form onSubmit={handleMoney(moneyInputValue)}> */}
                         <input useRef={dollarAmount} type="text" placeholder="Enter amount"/>
                         {/* <input onChange={handleMoneyInputChange} value={moneyInputValue} type="text" placeholder="Enter amount"/> */}
@@ -64,6 +68,11 @@ const Content = (props) => {
                         <h1>{returnedAmount}</h1>
                     {/* </form> */}
                     </div>
+                    {/* another if conditional when amount is input for the following to appear */}
+                    <div>
+                        <Timeslot liveBlockDetails={liveBlockDetails}/>
+                    </div>
+                </div>
             </div>
                 : 
                 ''

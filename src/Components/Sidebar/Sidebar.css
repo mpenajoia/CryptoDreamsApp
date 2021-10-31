@@ -1,13 +1,13 @@
 .sidebar {
     /* align-self: center; */
-    overflow: auto;
-    white-space: nowrap;
-}
-.sidebar::-webkit-scrollbar {
-    display:none;
 }
 .sidebar ul {
     display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+.sidebar ul::-webkit-scrollbar {
+    display:none;
 }
 
 .sidebar li {

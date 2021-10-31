@@ -13,15 +13,15 @@ function App() {
     <div className="App">
       <nav>
         <ul>
-          <Link to="/about">
-            <li>About</li>
-          </Link>
-          <Link to="/">
-            <li>CryptoFOMO</li>
-          </Link>
-          <Link to="/contact">
-            <li>Contact</li>
-          </Link>
+          <li><Link to="/about">
+            About
+          </Link></li>
+          <li><Link to="/">
+            CryptoFOMO
+          </Link></li>
+          <li><Link to="/contact">
+            Contact
+          </Link></li>
         </ul>
       </nav>
 

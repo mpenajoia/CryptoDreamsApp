@@ -6,26 +6,55 @@
 }
 
 .live-price-block {
-    background-color: #596170;
+    background-color: #484e59;
+    background: linear-gradient(135deg, rgba(45,51,48,1) 0%, rgba(61,68,78,1) 100%);
     border-radius: 5px;
     padding: 10px;
     margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.live-price-block h1 {
+    font-size: 2.7em;
+    margin: 5px 0 5px 15px;
+}
+.live-price-block h3 {
+    font-size: 1.7em;
+    margin: 5px 0 5px 15px;
+}
+.small-detail-info {
+    font-size: 1em;
+    margin: 5px 0 5px 15px;
+}
+.how-much {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 40px auto 30px auto;
 }
 button {
     border: none;
     outline: none;
-    padding: 6px 8px;
+    padding: 10px 20px;
     color: #D7DDE8 ;
     background-color: #484e59;
+    background: linear-gradient(135deg, rgba(45,51,48,1) 0%, rgba(61,68,78,1) 100%);
+    font-size: 1.3em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    
 }
 input {
     background: none;
     border: none;
     outline: none;
-    padding: 5px ;
+    padding: 5px 0px 8px 5px;
     color: #D7DDE8;
     border-bottom: 1px solid #596170;
-    width: 40%;
+    width: 67%;
+    font-size: 1.3em;
 }
 input::placeholder {
     color: #D7DDE8;

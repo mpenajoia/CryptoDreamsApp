@@ -22,7 +22,10 @@ nav ul {
 }
 nav li {
   margin: 0 10px;
+  font-size: 1.1em;
+  font-weight: 700;
 }
+
 
 footer {
   display: flex;
