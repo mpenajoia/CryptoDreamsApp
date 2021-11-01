@@ -12,35 +12,17 @@ const Sidebar = (props) => {
 
     const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
 
-    const [inputCrypto, setInputCrypto] = useState();
-    const [searchCrypto, setSearchCrypto] = useState(false)
-    const handleAddCrypto = (event) => {
-        event.preventDefault();
-        setSearchCrypto(true)
-        
-    }
-    const handleCryptoChange = (event) => {
-        event.preventDefault();
-        setInputCrypto(event.target.value)
-    }
-    const handleSubmitCrypto = (event) => {
-        event.preventDefault();
-        setSearchCrypto(false)
-        console.log(inputCrypto)
-    }
-
     return (
         <div className="sidebar">
             
             <ul>
                 {sidebarMap}
                 {/* render the second array thats mapped over of newly added cryto's */}
-                {/* hard code an add crypto button in an li */}
-                <li><button onClick={handleAddCrypto}>Add Me</button></li>
+                <li><button onClick={props.handleAddCrypto}>+</button></li>
             </ul>
-            {searchCrypto ? 
-                <form onSubmit={handleSubmitCrypto}>
-                    <input onChange={handleCryptoChange} value={inputCrypto} type="text" placeholder="enter a cryptocurrency"/>
+            {props.searchCrypto ? 
+                <form onSubmit={props.handleSubmitCrypto}>
+                    <input onChange={props.handleCryptoChange} value={props.inputCrypto} type="text" placeholder="enter a cryptocurrency"/>
                 </form> 
                 : ''
             }

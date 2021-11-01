@@ -6,16 +6,15 @@ const Content = (props) => {
     const [inputAmount, setInputAmount] = useState();
     const [sendAmount, setSendAmount] = useState();
 
-    const singleCrypto = props.sym
     const [liveBlockDetails, setLiveBlockDetails] = useState({})
     const indvApiCall = () => {
-        fetch(`https://api.coingecko.com/api/v3/coins/${singleCrypto}`)
+        fetch(`https://api.coingecko.com/api/v3/coins/${props.singleCrypto}`)
         .then(response => response.json())
         .then(data => setLiveBlockDetails(data))
     }
     useEffect(() => {
         indvApiCall()
-    }, [props.sym] )
+    }, [props.singleCrypto] )
     
     let livePrice
     let liveName

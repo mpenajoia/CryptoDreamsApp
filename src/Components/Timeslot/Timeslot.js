@@ -42,19 +42,17 @@ const Timeslot = (props) => {
         return(
             <div className="price-block">
                 <h3>A {item.time} Ago</h3>
-                {/* style={item.change > 0 ? {color:'green'} : {color:'red'}}>{item.change} */}
                 <h2 style={item.gainLoss > 0 ? {color:'green'} : {color:'red'}}>{item.gainLoss}</h2>
                 <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
                 <h3>${item.totalValue}</h3>
                 <p>Total Worth</p>
-                <p className="tokens">You would have {item.tokenAmount} {tokens}'s</p>
+                <p className="tokens">You would have {item.tokenAmount} {tokens}</p>
             </div>
         )
     })
 
     return (
         <>
-            {/* token quantity will have to be .toFixed(5) */}
             <div className="price-block-wrapper">
                 {timeVariablesMap}
             </div>
