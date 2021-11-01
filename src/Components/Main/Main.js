@@ -54,7 +54,7 @@ const Main = (props) => {
         searchApiCall();
     }, [userCrypto])
     
-    console.log(validCrypto)
+    // console.log(validCrypto)
     
     //if fetch call is successful or NOTundefined, add it to the sidebar
     // if(validCrypto){
@@ -65,16 +65,16 @@ const Main = (props) => {
     })
         
         // attempt to add new item to sidebar
-    const sidebarAddArray = (newItem) => {
+    const sidebarAddArray = ((newItem) => {
         return [...defaultSideArray, newItem]
-    }
-        // console.log(sidebarAddArray('shib'))
+    })
+        console.log(sidebarAddArray('newnew'))
         
     return (
         <div className="main">
-        <Sidebar sym={sym} defaultSideArray={defaultSideArray} inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} setSearchCrypto={setSearchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
-        <Content singleCrypto={singleCrypto} defaultSideArray={defaultSideArray} handleMoney={props.handleMoney}/>
-    </div>
+            <Sidebar sym={sym} sidebarAddArray={sidebarAddArray} defaultSideArray={defaultSideArray} inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} setSearchCrypto={setSearchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
+            <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
+        </div>
     )
 }
 

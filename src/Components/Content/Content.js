@@ -16,6 +16,9 @@ const Content = (props) => {
         indvApiCall()
     }, [props.singleCrypto] )
     
+    // console.log(liveBlockDetails.image.thumb)
+    
+    let liveImage 
     let livePrice
     let liveName
     let marketCap
@@ -25,11 +28,13 @@ const Content = (props) => {
         liveName = liveBlockDetails.name
         marketCap = liveBlockDetails.market_data.market_cap.usd.toLocaleString()
         liveSymbol = liveBlockDetails.symbol.toUpperCase()
+        liveImage = liveBlockDetails.image.small
     }else{
         livePrice = 'loading'
         liveName='loading'
         marketCap='loading'
         liveSymbol='loading'
+        liveImage='loading'
     }
     
     const handleOnChange = (event) => {
@@ -55,15 +60,18 @@ const Content = (props) => {
             {liveName !== 'loading' ?
             <div className="live-section">
                 <div>
-                    <div className="live-price-block">
-                        <h3>{liveName} ({liveSymbol})</h3>
+                    <div className="live-price-block grad">
+                        <div className="live-image">
+                            <img alt="live_image" src={liveImage}/>
+                        </div>
                         <h1>${livePrice}</h1>
+                        <h3>{liveName} ({liveSymbol})</h3>
                         <p className="small-detail-info">Market Cap: ${marketCap}</p>
                     </div>
                     <div className="amount-input">
                         <p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
                         <form onSubmit={handleSubmitAmount}>
-                            <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="10" />
+                            <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter an amount" />
                         </form>
                     </div>
                     <div>

@@ -40,9 +40,9 @@ const Timeslot = (props) => {
     const timeVariablesArray = [dayVariables, weekVariables, monthVariables, yearVariables]
     const timeVariablesMap = timeVariablesArray.map((item) => {
         return(
-            <div className="price-block">
+            <div className="price-block grad">
                 <h3>A {item.time} Ago</h3>
-                <h2 style={item.gainLoss > 0 ? {color:'green'} : {color:'red'}}>{item.gainLoss}</h2>
+                <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>{item.gainLoss}</h2>
                 <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
                 <h3>${item.totalValue}</h3>
                 <p>Total Worth</p>

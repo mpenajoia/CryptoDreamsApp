@@ -1,11 +1,10 @@
 
 import { Route, Link } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
 import './App.css';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Main from '../Main/Main';
-// import Content from '../Content/Content';
+import Footer from '../Footer/Footer';
 
 function App() {
     
@@ -13,14 +12,8 @@ function App() {
     <div className="App">
       <nav>
         <ul>
-          <li><Link to="/about">
-            About
-          </Link></li>
           <li><Link to="/">
             CryptoFOMO
-          </Link></li>
-          <li><Link to="/contact">
-            Contact
           </Link></li>
         </ul>
       </nav>
@@ -35,9 +28,7 @@ function App() {
         <Route exact path="/contact" component={Contact}/>
       </main>
 
-      <footer>
-        <p>This is my footer.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

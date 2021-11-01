@@ -5,6 +5,7 @@
     display: flex;
     overflow: auto;
     white-space: nowrap;
+    align-items: center;
 }
 .sidebar ul::-webkit-scrollbar {
     display:none;
@@ -16,4 +17,13 @@
 }
 .sidebar-sym {
     display: none;
+}
+.addCrypto {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    color: #D7DDE8 ;
+    font-size: 2em;
+    border-radius: 50%;
+    cursor: pointer;
 }

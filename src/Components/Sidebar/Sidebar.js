@@ -12,13 +12,15 @@ const Sidebar = (props) => {
 
     const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
 
+    // const sidebarMap = props.sidebarAddArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+
     return (
         <div className="sidebar">
             
             <ul>
                 {sidebarMap}
                 {/* render the second array thats mapped over of newly added cryto's */}
-                <li><button onClick={props.handleAddCrypto}>+</button></li>
+                <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>+</button></li>
             </ul>
             {props.searchCrypto ? 
                 <form onSubmit={props.handleSubmitCrypto}>
