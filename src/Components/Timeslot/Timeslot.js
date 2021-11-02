@@ -12,10 +12,10 @@ const Timeslot = (props) => {
     const percentMonthChange = props.liveBlockDetails.market_data.price_change_percentage_30d
     const percentYearChange = props.liveBlockDetails.market_data.price_change_percentage_1y 
     // variables storing logic (time-price) determining the price a certain time ago based on % change
-    const dayPrice = ((currentPrice * 100) / (100 + (percentDayChange))).toFixed(2)
-    const weekPrice = ((currentPrice * 100) / (100 + (percentWeekChange))).toFixed(2)
-    const monthPrice = ((currentPrice * 100) / (100 + (percentMonthChange))).toFixed(2)
-    const yearPrice = ((currentPrice * 100) / (100 + (percentYearChange))).toFixed(2)
+    const dayPrice = ((currentPrice * 100) / (100 + (percentDayChange))).toFixed(20)
+    const weekPrice = ((currentPrice * 100) / (100 + (percentWeekChange))).toFixed(20)
+    const monthPrice = ((currentPrice * 100) / (100 + (percentMonthChange))).toFixed(20)
+    const yearPrice = ((currentPrice * 100) / (100 + (percentYearChange))).toFixed(20)
     //variables for token-quantity
     const dayTokens = (userInput / dayPrice).toFixed(6)
     const weekTokens = (userInput / weekPrice).toFixed(6)

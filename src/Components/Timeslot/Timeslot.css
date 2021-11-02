@@ -35,6 +35,7 @@
 @media only screen and (min-width: 750px) {
     .price-block {
         width: 42%;
+        min-width: min-content;
     }
 }
 

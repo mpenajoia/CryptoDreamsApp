@@ -16,8 +16,6 @@ const Content = (props) => {
         indvApiCall()
     }, [props.singleCrypto] )
     
-    // console.log(liveBlockDetails.image.thumb)
-    
     let liveImage 
     let livePrice
     let liveName
@@ -90,5 +88,4 @@ const Content = (props) => {
         </>
     )
 }
-
 export default Content

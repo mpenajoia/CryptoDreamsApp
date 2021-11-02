@@ -14,8 +14,8 @@ const Footer = () => {
             </section>
             <section >
                 <div className="social-pack">
-                    <a href="https://www.instagram.com/marcopenajoia" target="_blank"><img className="social" src={IG} alt="IG" /></a>
-                    <a href="http://www.linkedin.com/in/mpenajoia" target="_blank"><img className="social" src={LI} alt="LI" /></a>
+                    <a href="https://www.instagram.com/marcopenajoia" rel="noopener noreferrer" target="_blank"><img className="social" src={IG} alt="IG" /></a>
+                    <a href="http://www.linkedin.com/in/mpenajoia" rel="noopener noreferrer" target="_blank"><img className="social" src={LI} alt="LI" /></a>
                 </div>
             </section>
             <p className="copy">© 2021 All rights and all lefts reserved.</p>

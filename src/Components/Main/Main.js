@@ -44,14 +44,17 @@ const Main = (props) => {
 
     // const addError = <p>I'm afraid that may not be a cryptocurrency</p>
 
+    const [searchError, setSearchError] = useState(false);
+
     const searchApiCall = (input) => {
         fetch(`https://api.coingecko.com/api/v3/coins/${input}`)
         .then(response => response.json())
         .then(data => {
             if(data.error){
-                console.log('Not a real coin')
+                setSearchError(true)
             }else{
-                setValidCrypto([...validCrypto, data])
+                setValidCrypto([...validCrypto, data]);
+                setSearchError(false)
             }
         })
         .catch(() => setValidCrypto(false))
@@ -59,7 +62,7 @@ const Main = (props) => {
        
     return (
         <div className="main">
-            <Sidebar sym={sym} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
+            <Sidebar sym={sym} searchError={searchError} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
             <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
         </div>
     )

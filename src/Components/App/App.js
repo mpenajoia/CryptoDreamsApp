@@ -23,7 +23,6 @@ function App() {
         {/* Route to homepage */}
         <Route exact path="/" render={(routerProps) => <Main {...routerProps} />}/>
         {/* <Route exact path="/" component={Intro}/> */}
-        
         <Route exact path="/:sym" render={(routerProps) => <Main {...routerProps} />}/>
         {/* Route to About page */}
         <Route exact path="/about" component={About}/>
