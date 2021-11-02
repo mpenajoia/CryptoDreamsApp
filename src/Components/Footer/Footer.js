@@ -6,13 +6,13 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer>
-            <section>
+            <section className="foot-nav-wrapper">
                 <ul>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </section>
-            <section>
+            <section >
                 <div className="social-pack">
                     <a href="https://www.instagram.com/marcopenajoia" target="_blank"><img className="social" src={IG} alt="IG" /></a>
                     <a href="http://www.linkedin.com/in/mpenajoia" target="_blank"><img className="social" src={LI} alt="LI" /></a>

@@ -15,14 +15,22 @@ const Sidebar = (props) => {
     })
     
     const sidebarMap = defaultArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
-    console.log(defaultArray)
+    console.log([...defaultArray, props.validCrypto])
+    // const [sidebarOptions, setSidebarOptions]= useState([])
+    // setSidebarOptions(props.validCrypto)
+    // console.log(sidebarOptions)
     // const [sideOptions, setSideOptions] = useState([])
     // useEffect(()=>{
     //     setSideOptions([...defaultArray, props.userAddedCoin])
     // }, [])
     // console.log(sideOptions)
     // const sidebarMap = props.sidebarAddArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
-    console.log(props.validCrypto)
+    
+    // if(props.validCrypto){
+    //     sidebarMap.push(props.validCrypto)
+    //     console.log('IT WORKED')
+    // }
+    
     const addedCoinMap = props.userAddedCoin.map(item => <li>{item}</li>)
 
     return (

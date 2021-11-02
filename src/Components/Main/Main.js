@@ -54,9 +54,17 @@ const Main = (props) => {
         .catch(() => setValidCrypto(false))
 
     }
+    // if(userCrypto){
+    //     searchApiCall()
+    //     console.log('API WORKED')
+    // }
+    
     useEffect(()=>{
         searchApiCall();
     }, [userCrypto])
+    
+    
+    
     //if fetch call is successful or NOTundefined, add it to the sidebar
     // if(validCrypto){
         //     console.log('here I am')
