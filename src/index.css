@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121E29;
+  background-color: #1C293C;
+  height:100%;
 }
 
 code {
@@ -16,5 +17,5 @@ code {
 
 .grad {
   background: rgb(28,42,58);
-  background: linear-gradient(135deg, rgba(28,42,58,1) 0%, rgba(22,35,49,1) 100%);
+  background: linear-gradient(135deg, rgba(37,56,80,1) 0%, rgba(48,71,101,1) 100%);
 }

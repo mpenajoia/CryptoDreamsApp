@@ -26,7 +26,11 @@ const Main = (props) => {
 
     const handleAddCrypto = (event) => {
         event.preventDefault();
-        setSearchCrypto(true)
+        if(searchCrypto){
+            setSearchCrypto(false)
+        }else{
+            setSearchCrypto(true)
+        }
     }
     const handleCryptoChange = (event) => {
         event.preventDefault();
@@ -34,7 +38,7 @@ const Main = (props) => {
     }
     const handleSubmitCrypto = (event) => {
         event.preventDefault();
-        setSearchCrypto(false)
+        // setSearchCrypto(false)
         setUserCrypto(inputCrypto)
         searchApiCall(inputCrypto)
     }
@@ -49,16 +53,11 @@ const Main = (props) => {
                 console.log('Not a real coin')
             }else{
                 setValidCrypto([...validCrypto, data])
-
             }
         })
         .catch(() => setValidCrypto(false))
     }
-    
-    // useEffect(()=>{
-    //     setCoinList([...coinList, validCrypto]);
-    // }, [userCrypto])
-    
+       
     return (
         <div className="main">
             <Sidebar sym={sym} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />

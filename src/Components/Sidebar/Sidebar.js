@@ -40,7 +40,7 @@ const Sidebar = (props) => {
                 {addedCoinMap}
                 {/* {props.validCrypto.id === props.userAddedCoin[0] ? (addedCoinMap) : ''} */}
                 {/* {props.validCrypto.error ? '' : (addedCoinMap)} */}
-                <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>+</button></li>
+                <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>{props.searchCrypto ? '-' : '+' }</button></li>
             </ul>
             {props.searchCrypto ? 
                 <form onSubmit={props.handleSubmitCrypto}>
