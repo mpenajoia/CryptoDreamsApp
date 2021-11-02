@@ -1,8 +1,9 @@
 footer {
     display: grid;
-    margin: 30px 20px 0 20px;
+    margin: auto 20px 0 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    
 }
 
 footer ul {
@@ -33,4 +34,15 @@ footer ul li {
 .social {
     margin: 8px auto;
     width: 100%;
+}
+
+
+@media only screen and (min-width: 750px) {
+    footer {
+        margin: auto 20% 0 20%;
+    }
+    .foot-nav-wrapper {
+        justify-content: center;
+    }
+
 }

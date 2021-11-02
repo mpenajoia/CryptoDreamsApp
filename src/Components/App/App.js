@@ -14,7 +14,7 @@ function App() {
       <nav>
         <ul>
           <li><Link to="/">
-            CryptoFOMO
+            cryptoFOMO
           </Link></li>
         </ul>
       </nav>

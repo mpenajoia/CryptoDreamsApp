@@ -38,7 +38,6 @@ const Main = (props) => {
     }
     const handleSubmitCrypto = (event) => {
         event.preventDefault();
-        // setSearchCrypto(false)
         setUserCrypto(inputCrypto)
         searchApiCall(inputCrypto)
     }

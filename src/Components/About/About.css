@@ -5,3 +5,15 @@
 .about-info {
     text-align: left;
 }
+
+@media only screen and (min-width: 750px) {
+    .about-wrapper {
+        margin: 100px 20%;
+    }
+    .about-wrapper h2 {
+        font-size: 2.2em;
+    }
+    .about-wrapper p {
+        font-size: 1.8em;
+    }
+}

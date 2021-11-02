@@ -71,3 +71,11 @@ input::placeholder {
 .amount-input {
     margin-bottom: 20px;
 }
+
+@media only screen and (min-width: 750px) {
+    .live-image {
+        left: 35px;
+        top: 25px;
+    }
+
+}
