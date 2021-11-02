@@ -6,7 +6,6 @@ import { useParams } from "react-router"
 
 const Main = (props) => {
     let { sym } = useParams();
-    // fetch for list of default cryptos in sidebar
     const [coinList, setCoinList] = useState([])
     const makeApiCall = () => {
         fetch('https://api.coingecko.com/api/v3/coins/')
@@ -22,6 +21,9 @@ const Main = (props) => {
     const singleCrypto = sym
     const [inputCrypto, setInputCrypto] = useState();
     const [searchCrypto, setSearchCrypto] = useState(false)
+    const [userCrypto, setUserCrypto] = useState();
+    const [validCrypto, setValidCrypto] = useState([]);
+
     const handleAddCrypto = (event) => {
         event.preventDefault();
         setSearchCrypto(true)
@@ -34,59 +36,32 @@ const Main = (props) => {
         event.preventDefault();
         setSearchCrypto(false)
         setUserCrypto(inputCrypto)
-        setUserAddedCoin([...userAddedCoin, inputCrypto])
-        
-        
-        // this needs to return something that changes the information fetched on Content (singleCrypto) AND return something that changes the state of the array that controls the list of items in the sidebar
+        searchApiCall(inputCrypto)
     }
-    
-    
-    // need to return an object of all info pertaining to the coin that the user searched for
-    // why don't I make a fetch for just that individual input?
+
     // const addError = <p>I'm afraid that may not be a cryptocurrency</p>
 
-    const [userCrypto, setUserCrypto] = useState();
-    const [validCrypto, setValidCrypto] = useState();
-    const searchApiCall = () => {
-        fetch(`https://api.coingecko.com/api/v3/coins/${userCrypto}`)
+    const searchApiCall = (input) => {
+        fetch(`https://api.coingecko.com/api/v3/coins/${input}`)
         .then(response => response.json())
-        .then(data => setValidCrypto(data))
+        .then(data => {
+            if(data.error){
+                console.log('Not a real coin')
+            }else{
+                setValidCrypto([...validCrypto, data])
+
+            }
+        })
         .catch(() => setValidCrypto(false))
-
     }
-    // if(userCrypto){
-    //     searchApiCall()
-    //     console.log('API WORKED')
-    // }
     
-    useEffect(()=>{
-        searchApiCall();
-    }, [userCrypto])
+    // useEffect(()=>{
+    //     setCoinList([...coinList, validCrypto]);
+    // }, [userCrypto])
     
-    
-    
-    //if fetch call is successful or NOTundefined, add it to the sidebar
-    // if(validCrypto){
-        //     console.log('here I am')
-        // }
-
-                    // const defaultSideArray = coinList.filter((item) => {
-                    //     return item.symbol === 'btc' || item.symbol === 'eth' || item.symbol === 'sol' || item.symbol === 'ada' || item.symbol === 'dot'
-                    // })
-        
-        // attempt to add new item to sidebar
-    // const sidebarAddArray = ((newItem) => {
-    //     return [...defaultSideArray, newItem]
-    // })
-    //     console.log(sidebarAddArray)
-    
-    const [userAddedCoin, setUserAddedCoin] = useState([]);
-    // console.log(userAddedCoin)
-
-
     return (
         <div className="main">
-            <Sidebar sym={sym} validCrypto={validCrypto} coinList={coinList} userAddedCoin={userAddedCoin} inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} setSearchCrypto={setSearchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
+            <Sidebar sym={sym} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
             <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
         </div>
     )
@@ -94,5 +69,3 @@ const Main = (props) => {
 
 export default Main
 
-// sidebarAddArray={sidebarAddArray}
-// defaultSideArray={defaultSideArray}

@@ -28,8 +28,8 @@
     /* background-color: #121E29; */
     border-bottom-right-radius: 20%;
     position: absolute;
-    left: 1px;
-    top: -12px;
+    left: 26px;
+    top: 15px;
     /* padding: 11px; */
 }
 .small-detail-info {
@@ -66,4 +66,8 @@ input {
 }
 input::placeholder {
     color: #7f8185;
+}
+
+.amount-input {
+    margin-bottom: 20px;
 }

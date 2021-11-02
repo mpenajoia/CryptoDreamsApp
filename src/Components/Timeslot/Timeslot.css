@@ -7,9 +7,27 @@
     border-radius: 5px;
     padding: 10px;
     margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
 }
 .tokens {
     font-weight: 700;
-    font-size: 1.3em;
-    margin: 40px 10px 20px 10px;
+    font-size: 1em;
+    margin: 30px 10px 20px 10px;
+}
+.info {
+    margin: 5px 0;
+}
+.info h2 {
+    margin: 0;
+    font-size: 2.2em;
+}
+.info h3 {
+    margin: 0;
+    font-size: 1.8em;;
+}
+
+.info p {
+    margin: 0;
+    font-size: 1.2em;
 }

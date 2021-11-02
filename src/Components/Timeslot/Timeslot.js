@@ -41,16 +41,19 @@ const Timeslot = (props) => {
     const timeVariablesMap = timeVariablesArray.map((item) => {
         return(
             <div className="price-block grad">
-                <h3>A {item.time} Ago</h3>
-                <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>{item.gainLoss}</h2>
-                <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
-                <h3>${item.totalValue}</h3>
-                <p>Total Worth</p>
+                <h2>{item.time} Ago</h2>
+                <div className="info">
+                    <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>${item.gainLoss}</h2>
+                    <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
+                </div>
+                <div className="info">
+                    <h3>${item.totalValue}</h3>
+                    <p>Total Worth</p>
+                </div>
                 <p className="tokens">You would have {item.tokenAmount} {tokens}</p>
             </div>
         )
     })
-
     return (
         <>
             <div className="price-block-wrapper">
@@ -59,5 +62,4 @@ const Timeslot = (props) => {
         </>
     )
 }
-
 export default Timeslot

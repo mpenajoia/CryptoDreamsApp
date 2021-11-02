@@ -1,7 +1,12 @@
+import './Contact.css';
 
 const Contact = () => {
     return (
-        <h1>Contact Page</h1>
+        <div className="contact-wrapper">
+            <h2>Need to reach us?</h2>
+            <h3 className="no-margin">Don't bother.</h3>
+            <p className="no-margin">None of this is financial advice.</p>
+        </div>
     )
 }
 

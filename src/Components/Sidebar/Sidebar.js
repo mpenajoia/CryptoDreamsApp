@@ -3,43 +3,43 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Sidebar = (props) => {
-    // fetch api call when user inputs from a search
 
-    // create an empty array (in a useState?) to store the incoming user searched cryptos
-    //this array will later be mapped through (after being validated) and will appear in the side bar
-
-    //validity of crypto will come from the api fetch's confirmation
+    // if(props.validCrypto.error){
+    //     // put  a use state in here to control an error message?
+    //     console.log('Coin does not exist')
+    // }else{
+    //     // send props.validCrypto to where it needs to go. into an array? that will continue to be added to (theUserAddedCoin??)
+    //     console.log('theUserAddedCoin: ', theUserAddedCoin)
+    //     console.log('userAddedCoinFilter: ', userAddedCoinFilter)
+    // }
     
+
+
+    // const [userUpdatedCoins, setUserUpdatedCoins] = useState([])
+    console.log(props.validCrypto)
+
     const defaultArray = props.coinList.filter((item) => {
         return item.symbol === 'btc' || item.symbol === 'eth' || item.symbol === 'sol' || item.symbol === 'ada' || item.symbol === 'dot'
     })
     
     const sidebarMap = defaultArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
-    console.log([...defaultArray, props.validCrypto])
-    // const [sidebarOptions, setSidebarOptions]= useState([])
-    // setSidebarOptions(props.validCrypto)
-    // console.log(sidebarOptions)
-    // const [sideOptions, setSideOptions] = useState([])
-    // useEffect(()=>{
-    //     setSideOptions([...defaultArray, props.userAddedCoin])
-    // }, [])
-    // console.log(sideOptions)
-    // const sidebarMap = props.sidebarAddArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
-    
-    // if(props.validCrypto){
-    //     sidebarMap.push(props.validCrypto)
-    //     console.log('IT WORKED')
-    // }
-    
-    const addedCoinMap = props.userAddedCoin.map(item => <li>{item}</li>)
 
+    const addedCoinMap = props.validCrypto.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+
+    // let addedCoinMap
+    // if(props.validCrypto.error){
+    //     addedCoinMap = 'loading'
+    // }else{
+    //     addedCoinMap =  <li><Link to={"/" + props.validCrypto.id}><img src={props.validCrypto.image.small} alt={props.validCrypto.id}/><span className="sidebar-sym">{props.validCrypto.symbol.toUpperCase()}</span></Link></li>
+    // }
     return (
         <div className="sidebar">
             
             <ul>
                 {sidebarMap}
-                {/* render the second array thats mapped over of newly added cryto's */}
                 {addedCoinMap}
+                {/* {props.validCrypto.id === props.userAddedCoin[0] ? (addedCoinMap) : ''} */}
+                {/* {props.validCrypto.error ? '' : (addedCoinMap)} */}
                 <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>+</button></li>
             </ul>
             {props.searchCrypto ? 
@@ -51,5 +51,4 @@ const Sidebar = (props) => {
         </div>
     )
 }
-
 export default Sidebar
