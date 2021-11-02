@@ -1,5 +1,5 @@
 import './Sidebar.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Sidebar = (props) => {
@@ -9,10 +9,21 @@ const Sidebar = (props) => {
     //this array will later be mapped through (after being validated) and will appear in the side bar
 
     //validity of crypto will come from the api fetch's confirmation
-
-    const sidebarMap = props.defaultSideArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
-
+    
+    const defaultArray = props.coinList.filter((item) => {
+        return item.symbol === 'btc' || item.symbol === 'eth' || item.symbol === 'sol' || item.symbol === 'ada' || item.symbol === 'dot'
+    })
+    
+    const sidebarMap = defaultArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+    console.log(defaultArray)
+    // const [sideOptions, setSideOptions] = useState([])
+    // useEffect(()=>{
+    //     setSideOptions([...defaultArray, props.userAddedCoin])
+    // }, [])
+    // console.log(sideOptions)
     // const sidebarMap = props.sidebarAddArray.map(item => <li><Link to={"/" + item.id}><img src={item.image.small} alt={item.id}/><span className="sidebar-sym">{item.symbol.toUpperCase()}</span></Link></li>)
+    console.log(props.validCrypto)
+    const addedCoinMap = props.userAddedCoin.map(item => <li>{item}</li>)
 
     return (
         <div className="sidebar">
@@ -20,6 +31,7 @@ const Sidebar = (props) => {
             <ul>
                 {sidebarMap}
                 {/* render the second array thats mapped over of newly added cryto's */}
+                {addedCoinMap}
                 <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>+</button></li>
             </ul>
             {props.searchCrypto ? 
