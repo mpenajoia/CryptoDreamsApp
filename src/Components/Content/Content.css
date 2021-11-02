@@ -3,9 +3,12 @@
     flex-direction: column;
     padding: 10px;
 }
+.first-block {
+    position: relative;
+}
 .live-price-block {
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px 25px 15px 15px;
     margin: 20px 10px;
     display: flex;
     flex-direction: column;
@@ -22,8 +25,12 @@
     align-self: end;
 }
 .live-image {
-    background-color: #121E29;
-    border-bottom-right-radius: 10px;
+    /* background-color: #121E29; */
+    border-bottom-right-radius: 20%;
+    position: absolute;
+    left: 1px;
+    top: -12px;
+    /* padding: 11px; */
 }
 .small-detail-info {
     font-size: 1em;

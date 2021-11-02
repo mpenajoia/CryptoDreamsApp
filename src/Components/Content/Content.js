@@ -60,13 +60,15 @@ const Content = (props) => {
             {liveName !== 'loading' ?
             <div className="live-section">
                 <div>
-                    <div className="live-price-block grad">
+                    <div className="first-block">
                         <div className="live-image">
                             <img alt="live_image" src={liveImage}/>
                         </div>
-                        <h1>${livePrice}</h1>
-                        <h3>{liveName} ({liveSymbol})</h3>
-                        <p className="small-detail-info">Market Cap: ${marketCap}</p>
+                        <div className="live-price-block grad">
+                            <h1>${livePrice}</h1>
+                            <h3>{liveName} ({liveSymbol})</h3>
+                            <p className="small-detail-info">Market Cap: ${marketCap}</p>
+                        </div>
                     </div>
                     <div className="amount-input">
                         <p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
