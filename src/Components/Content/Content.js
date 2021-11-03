@@ -15,7 +15,6 @@ const Content = (props) => {
     useEffect(() => {
         indvApiCall()
     }, [props.singleCrypto] )
-    console.log(liveBlockDetails)
     let liveImage 
     let livePrice
     let liveName
