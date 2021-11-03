@@ -43,11 +43,11 @@ const Timeslot = (props) => {
             <div className="price-block grad">
                 <h2>{item.time} Ago</h2>
                 <div className="info">
-                    <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>${item.gainLoss}</h2>
+                    <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>${item.gainLoss.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h2>
                     <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
                 </div>
                 <div className="info">
-                    <h3>${item.totalValue}</h3>
+                    <h3>${item.totalValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
                     <p>Total Worth</p>
                 </div>
                 <p className="tokens">You would have {item.tokenAmount} {tokens}</p>

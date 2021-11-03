@@ -1,5 +1,7 @@
 .contact-wrapper {
-    margin: 100px auto;
+    margin: 100px 10%;
+    border-radius: 20px;
+    padding: 15px 30px 40px 30px;
 }
 .no-margin {
     margin: 0;

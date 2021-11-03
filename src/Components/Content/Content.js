@@ -63,7 +63,7 @@ const Content = (props) => {
                             <img alt="live_image" src={liveImage}/>
                         </div>
                         <div className="live-price-block grad">
-                            <h1>${livePrice}</h1>
+                            <h1>${livePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
                             <h3>{liveName} ({liveSymbol})</h3>
                             <p className="small-detail-info">Market Cap: ${marketCap}</p>
                         </div>

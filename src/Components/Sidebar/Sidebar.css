@@ -6,11 +6,19 @@
     justify-content: center;
     flex-direction: column;
 }
+.sidebar::-webkit-scrollbar {
+    display:none;
+}
+
 .side-center{
     display: flex;
     width: 100%;
     overflow: auto;
 }
+.side-center::-webkit-scrollbar {
+    display:none;
+}
+
 .sidebar ul {
     display: flex;
     overflow: auto;
