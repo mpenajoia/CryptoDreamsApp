@@ -21,6 +21,7 @@ const Content = (props) => {
     let liveSymbol
     let marketCapRank
     let ath
+    let liveSite
     if(liveBlockDetails.market_data){
         livePrice = liveBlockDetails.market_data.current_price.usd.toFixed(2)
         liveName = liveBlockDetails.name
@@ -29,6 +30,7 @@ const Content = (props) => {
         liveImage = liveBlockDetails.image.small
         marketCapRank = liveBlockDetails.market_cap_rank
         ath = liveBlockDetails.market_data.ath.usd
+        liveSite = liveBlockDetails.links.homepage[0]
     }else{
         livePrice = 'loading'
         liveName ='loading'
@@ -37,6 +39,7 @@ const Content = (props) => {
         liveImage ='loading'
         marketCapRank = 'loading'
         ath = 'loading'
+        liveSite = 'loading'
     }
     
     const handleOnChange = (event) => {
@@ -66,7 +69,9 @@ const Content = (props) => {
                 <div>
                     <div className="first-block">
                         <div className="live-image">
-                            <img alt="live_image" src={liveImage}/>
+                            <a href={liveSite} rel="noopener noreferrer" target="_blank">
+                                <img alt="live_image" src={liveImage}/>
+                            </a>
                         </div>
                         <div className="live-price-block grad">
                             <h1>${livePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
