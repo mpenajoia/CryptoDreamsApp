@@ -1,5 +1,5 @@
 
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
@@ -20,7 +20,6 @@ function App() {
       </nav>
 
       <main>
-        {/* <Switch> */}
           {/* Route to homepage */}
           <Route exact path="/" render={(routerProps) => <Main {...routerProps} />}/>
           <Route exact path="/" component={Intro} />
@@ -30,7 +29,6 @@ function App() {
           <Route exact path="/about" component={About}/>
           {/* Route to Contact page */}
           <Route exact path="/contact" component={Contact}/>
-        {/* </Switch> */}
       </main>
 
       <Footer />

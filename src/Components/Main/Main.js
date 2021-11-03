@@ -21,7 +21,6 @@ const Main = (props) => {
     const singleCrypto = sym
     const [inputCrypto, setInputCrypto] = useState();
     const [searchCrypto, setSearchCrypto] = useState(false)
-    const [userCrypto, setUserCrypto] = useState();
     const [validCrypto, setValidCrypto] = useState([]);
 
     const handleAddCrypto = (event) => {
@@ -38,11 +37,8 @@ const Main = (props) => {
     }
     const handleSubmitCrypto = (event) => {
         event.preventDefault();
-        setUserCrypto(inputCrypto)
         searchApiCall(inputCrypto)
     }
-
-    // const addError = <p>I'm afraid that may not be a cryptocurrency</p>
 
     const [searchError, setSearchError] = useState(false);
 

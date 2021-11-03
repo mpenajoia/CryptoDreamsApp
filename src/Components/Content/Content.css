@@ -24,6 +24,11 @@
     margin: 5px 0 5px 15px;
     align-self: end;
 }
+.market{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .live-image {
     /* background-color: #121E29; */
     border-bottom-right-radius: 20%;

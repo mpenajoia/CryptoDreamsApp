@@ -23,3 +23,9 @@ code {
   background: rgb(28,42,58);
   background: linear-gradient(135deg, rgba(37,56,80,1) 0%, rgba(48,71,101,1) 100%);
 }
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}

@@ -15,24 +15,30 @@ const Content = (props) => {
     useEffect(() => {
         indvApiCall()
     }, [props.singleCrypto] )
-    
+    console.log(liveBlockDetails)
     let liveImage 
     let livePrice
     let liveName
     let marketCap
     let liveSymbol
+    let marketCapRank
+    let ath
     if(liveBlockDetails.market_data){
         livePrice = liveBlockDetails.market_data.current_price.usd.toFixed(2)
         liveName = liveBlockDetails.name
         marketCap = liveBlockDetails.market_data.market_cap.usd.toLocaleString()
         liveSymbol = liveBlockDetails.symbol.toUpperCase()
         liveImage = liveBlockDetails.image.small
+        marketCapRank = liveBlockDetails.market_cap_rank
+        ath = liveBlockDetails.market_data.ath.usd
     }else{
         livePrice = 'loading'
         liveName='loading'
         marketCap='loading'
         liveSymbol='loading'
         liveImage='loading'
+        marketCapRank= 'loading'
+        ath = 'loading'
     }
     
     const handleOnChange = (event) => {
@@ -64,8 +70,14 @@ const Content = (props) => {
                         </div>
                         <div className="live-price-block grad">
                             <h1>${livePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
-                            <h3>{liveName} ({liveSymbol})</h3>
-                            <p className="small-detail-info">Market Cap: ${marketCap}</p>
+                            <div className="market">
+                                <p className="small-detail-info left">ATH: ${ath}</p>
+                                <h3 className="right">{liveName} ({liveSymbol})</h3>
+                            </div>
+                            <div className="market">
+                                <p className="small-detail-info left">Market Rank: #{marketCapRank}</p>
+                                <p className="small-detail-info right">Market Cap: ${marketCap}</p>
+                            </div>
                         </div>
                     </div>
                     <div className="amount-input">
