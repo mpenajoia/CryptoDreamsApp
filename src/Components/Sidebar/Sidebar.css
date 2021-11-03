@@ -1,11 +1,22 @@
 .sidebar {
     /* align-self: center; */
+    display: flex;
+    overflow: auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.side-center{
+    display: flex;
+    width: 100%;
+    overflow: auto;
 }
 .sidebar ul {
     display: flex;
     overflow: auto;
     white-space: nowrap;
     align-items: center;
+    flex: 0 0 auto;
 }
 .sidebar ul::-webkit-scrollbar {
     display:none;
@@ -17,6 +28,10 @@
 }
 .sidebar-sym {
     display: none;
+}
+form {
+    width:90%;
+    margin: 0 auto;
 }
 .addCrypto {
     border: none;
@@ -30,14 +45,25 @@
     height: 60px;
 }
 .check-coin {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: 600;
     margin: 5px auto;
 }
 
 @media only screen and (min-width: 750px) {
     .sidebar ul {
-        justify-content: start;
+        justify-content: center;
     }
-
+    /* .sidebar-sym {
+        display: block;
+        margin: 3px auto;
+        font-weight: 200;
+        text-align: center;
+    } */
+    .sidebar {
+        display: grid;
+    }
+    .check-coin {
+        font-size: 1.4em;
+    }
 }

@@ -18,12 +18,13 @@ const Sidebar = (props) => {
 
     return (
         <div className="sidebar">
-            
-            <ul>
-                {sidebarMap}
-                {addedCoinMap}
-                <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>{props.searchCrypto ? '-' : '+' }</button></li>
-            </ul>
+            <div className="side-center">
+                <ul>
+                    {sidebarMap}
+                    {addedCoinMap}
+                    <li><button className="addCrypto grad" onClick={props.handleAddCrypto}>{props.searchCrypto ? '-' : '+' }</button></li>
+                </ul>
+            </div>
             {props.searchCrypto ? 
                 <>
                     <form onSubmit={props.handleSubmitCrypto}>
