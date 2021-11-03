@@ -1,6 +1,6 @@
 .sidebar {
     /* align-self: center; */
-    display: flex;
+    display: grid;
     overflow: auto;
     width: 100%;
     justify-content: center;

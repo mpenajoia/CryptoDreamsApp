@@ -85,6 +85,7 @@ const Content = (props) => {
                         <p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
                         <form onSubmit={handleSubmitAmount}>
                             <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter an amount" />
+                            {/* <button className="grad" onClick={handleSubmitAmount}>Enter</button> */}
                         </form>
                     </div>
                     <div>
