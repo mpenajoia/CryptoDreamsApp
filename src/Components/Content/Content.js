@@ -41,7 +41,6 @@ const Content = (props) => {
         ath = 'loading'
         liveSite = 'loading'
     }
-    
     const handleOnChange = (event) => {
         event.preventDefault();
         setInputAmount(event.target.value)
@@ -53,15 +52,12 @@ const Content = (props) => {
         if(isNaN(inputAmount)){
             setShowTimeslots(false)
             setError(false)
-            // setInputAmount('')
         }else{
             setSendAmount(inputAmount)
             setShowTimeslots(true)
             setError(true)
-            // setInputAmount('')
         }
     }
-    
     return (
         <>
             {liveName !== 'loading' ?

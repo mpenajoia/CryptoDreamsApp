@@ -8,7 +8,6 @@ import Footer from '../Footer/Footer';
 import Intro from '../Intro/Intro';
 
 function App() {
-    
   return (
     <div className="App">
       <nav>
@@ -18,7 +17,6 @@ function App() {
           </Link></li>
         </ul>
       </nav>
-
       <main>
           {/* Route to homepage */}
           <Route exact path="/" render={(routerProps) => <Main {...routerProps} />}/>
@@ -30,10 +28,8 @@ function App() {
           {/* Route to Contact page */}
           <Route exact path="/contact" component={Contact}/>
       </main>
-
       <Footer />
     </div>
   );
 }
-
 export default App;

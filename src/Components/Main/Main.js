@@ -17,12 +17,10 @@ const Main = (props) => {
     useEffect(() => {
         makeApiCall()
     }, [])
-
     const singleCrypto = sym
     const [inputCrypto, setInputCrypto] = useState();
     const [searchCrypto, setSearchCrypto] = useState(false)
     const [validCrypto, setValidCrypto] = useState([]);
-
     const handleAddCrypto = (event) => {
         event.preventDefault();
         if(searchCrypto){
@@ -40,9 +38,7 @@ const Main = (props) => {
         searchApiCall(inputCrypto)
         setInputCrypto('')
     }
-
     const [searchError, setSearchError] = useState(false);
-
     const searchApiCall = (input) => {
         fetch(`https://api.coingecko.com/api/v3/coins/${input}`)
         .then(response => response.json())
@@ -56,14 +52,12 @@ const Main = (props) => {
         })
         .catch(() => setValidCrypto(false))
     }
-       
     return (
         <div className="main">
-            <Sidebar sym={sym} searchError={searchError} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} setInputCrypto={setInputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
+            <Sidebar sym={sym} searchError={searchError} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
             <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
         </div>
     )
 }
-
 export default Main
 
