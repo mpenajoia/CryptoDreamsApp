@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/CryptoDreamsApp/static/css/main.31563920.chunk.css",
-    "main.js": "/CryptoDreamsApp/static/js/main.f68108b4.chunk.js",
-    "main.js.map": "/CryptoDreamsApp/static/js/main.f68108b4.chunk.js.map",
+    "main.js": "/CryptoDreamsApp/static/js/main.5b626e51.chunk.js",
+    "main.js.map": "/CryptoDreamsApp/static/js/main.5b626e51.chunk.js.map",
     "runtime-main.js": "/CryptoDreamsApp/static/js/runtime-main.0575e52d.js",
     "runtime-main.js.map": "/CryptoDreamsApp/static/js/runtime-main.0575e52d.js.map",
-    "static/js/2.1f57d16a.chunk.js": "/CryptoDreamsApp/static/js/2.1f57d16a.chunk.js",
-    "static/js/2.1f57d16a.chunk.js.map": "/CryptoDreamsApp/static/js/2.1f57d16a.chunk.js.map",
+    "static/js/2.c308a974.chunk.js": "/CryptoDreamsApp/static/js/2.c308a974.chunk.js",
+    "static/js/2.c308a974.chunk.js.map": "/CryptoDreamsApp/static/js/2.c308a974.chunk.js.map",
     "static/js/3.03285464.chunk.js": "/CryptoDreamsApp/static/js/3.03285464.chunk.js",
     "static/js/3.03285464.chunk.js.map": "/CryptoDreamsApp/static/js/3.03285464.chunk.js.map",
     "index.html": "/CryptoDreamsApp/index.html",
     "static/css/main.31563920.chunk.css.map": "/CryptoDreamsApp/static/css/main.31563920.chunk.css.map",
-    "static/js/2.1f57d16a.chunk.js.LICENSE.txt": "/CryptoDreamsApp/static/js/2.1f57d16a.chunk.js.LICENSE.txt"
+    "static/js/2.c308a974.chunk.js.LICENSE.txt": "/CryptoDreamsApp/static/js/2.c308a974.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0575e52d.js",
-    "static/js/2.1f57d16a.chunk.js",
+    "static/js/2.c308a974.chunk.js",
     "static/css/main.31563920.chunk.css",
-    "static/js/main.f68108b4.chunk.js"
+    "static/js/main.5b626e51.chunk.js"
   ]
 }
