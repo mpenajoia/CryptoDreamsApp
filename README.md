@@ -26,7 +26,7 @@ Coingecko.com provides an public API with all the information I need for this pr
 
  - [https://www.coingecko.com/en/api/documentation](Coingecko)
 
-```
+```js
 {
 id: "bitcoin",
 symbol: "btc",
