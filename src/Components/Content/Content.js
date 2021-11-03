@@ -5,7 +5,6 @@ import Timeslot from "../Timeslot/Timeslot"
 const Content = (props) => {
     const [inputAmount, setInputAmount] = useState();
     const [sendAmount, setSendAmount] = useState();
-
     const [liveBlockDetails, setLiveBlockDetails] = useState({})
     const indvApiCall = () => {
         fetch(`https://api.coingecko.com/api/v3/coins/${props.singleCrypto}`)
@@ -32,11 +31,11 @@ const Content = (props) => {
         ath = liveBlockDetails.market_data.ath.usd
     }else{
         livePrice = 'loading'
-        liveName='loading'
-        marketCap='loading'
-        liveSymbol='loading'
-        liveImage='loading'
-        marketCapRank= 'loading'
+        liveName ='loading'
+        marketCap ='loading'
+        liveSymbol ='loading'
+        liveImage ='loading'
+        marketCapRank = 'loading'
         ath = 'loading'
     }
     
@@ -51,10 +50,12 @@ const Content = (props) => {
         if(isNaN(inputAmount)){
             setShowTimeslots(false)
             setError(false)
+            // setInputAmount('')
         }else{
             setSendAmount(inputAmount)
             setShowTimeslots(true)
             setError(true)
+            // setInputAmount('')
         }
     }
     
