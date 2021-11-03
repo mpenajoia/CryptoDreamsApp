@@ -6,15 +6,15 @@
 |---|---| ---|
 |Day 1| Project Description | Complete
 |Day 1| Wireframes / React Arch Map | Complete
-|Day 3| Core Application Structure | Incomplete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches | Incomplete
+|Day 3| Core Application Structure | Complete
+|Day 4| MVP & Bug Fixes | Complete
+|Day 5| Final Touches | Complete
 |Day 6| Present | Incomplete
 
 ## Project Links
 
-- [add your github repo link]()
-- [add your deployment link]()
+- [cryptoFOMO App - github repo link](https://github.com/mpenajoia/CryptoDreamsApp)
+- [cryptoFOMO App - deployment link](https://mpenajoia.github.io/CryptoDreamsApp/)
 
 ## Project Description
 
@@ -121,35 +121,58 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Priority | Estimated Time | Time Invested |
 | --- | :---: |  :---: | :---: | 
-| Pulling Api data | H | 2hrs|  hrs | 
-| Making components and linking/routing them correctly | H | 6hrs|  hrs | 
-| About/Contact/Footer/Nav | H | 3hrs|  hrs | 
-| Populating Api data correctly | H | 5hrs|  hrs | 
-| Taking user input value to run math logic and return results | H | 5hrs|  hrs | 
-| Aesthetics/CSS | H | 7hrs|  hrs | 
-| Responsiveness | H | 4hrs|  hrs | 
-| Correct use of React Hooks | H | 4hrs|  hrs | 
-| Correct use of methods | H | 4hrs|  hrs | 
-| Total | H | 40hrs| hrs |
+| Pulling Api data | H | 2hrs|  2hrs | 
+| Making components and linking/routing them correctly | H | 6hrs|  2hrs | 
+| About/Contact/Footer/Nav | H | 3hrs|  1hrs | 
+| Populating Api data correctly | H | 5hrs|  4hrs | 
+| Taking user input value to run math logic and return results | H | 5hrs|  5hrs | 
+| Aesthetics/CSS | H | 7hrs|  5hrs | 
+| Responsiveness | H | 4hrs|  1hrs | 
+| Correct use of React Hooks | H | 4hrs|  3hrs | 
+| Correct use of methods | H | 4hrs|  2hrs | 
+| Total | H | 40hrs| 25hrs |
 
 ## Post MVP
 
 | Component | Priority | Estimated Time | Time Invested |
 | --- | :---: |  :---: | :---: | 
-| Ability for user to search for their own crypto | H | 6hrs|  hrs | 
-| Some easter eggs | H | 2hrs|  hrs |  
-| Total | H | 8hrs| hrs |
+| Ability for user to search for their own crypto | H | 6hrs|  3hrs | 
+| Some easter eggs | H | 2hrs|  .5hrs |  
+| Total | H | 8hrs| 3.5hrs |
 
 
-## Additional Libraries
- TBD 
+## Inspiration
+Layout and color palette inspirations
+ - [Cryptocurrency Mobile App / UI UX design by Alexandra Shvetsova](https://www.behance.net/gallery/129750497/Cryptocurrency-Mobile-App-UI-UX-design?tracking_source=search_projects_recommended%7Ccrypto%20app)
+ - [Trading Platform by Alexa Nikitina](https://www.behance.net/gallery/90482491/Trading-Platform?tracking_source=search_projects_recommended%7Ccrypto%20app) 
 
 ## Code Snippet
 
-TBD 
+Combination of useState and a ternary to toggle error/instructions for a user input 
 
+```js
+const [error, setError] = useState(true)
+    const [showTimeslots, setShowTimeslots] = useState(false)
+    const handleSubmitAmount = (event) => {
+        event.preventDefault();
+        if(isNaN(inputAmount)){
+            setShowTimeslots(false)
+            setError(false)
+        }else{
+            setSendAmount(inputAmount)
+            setShowTimeslots(true)
+            setError(true)
+        }
+    }
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+
+Inside JSX:
+```js
+<div className="amount-input">
+	<p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
+	<form onSubmit={handleSubmitAmount}>
+		<input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter an amount" />
+	</form>
+</div>
+
 ```
