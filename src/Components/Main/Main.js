@@ -55,7 +55,6 @@ const Main = (props) => {
     return (
         <div className="main">
             <Sidebar sym={sym} searchError={searchError} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
-            {/* might need to put a ternary here to prevent a 404 error */}
             <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
         </div>
     )
