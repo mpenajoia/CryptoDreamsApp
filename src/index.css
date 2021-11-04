@@ -22,6 +22,9 @@ code {
 .grad {
   background: rgb(28,42,58);
   background: linear-gradient(135deg, rgba(37,56,80,1) 0%, rgba(48,71,101,1) 100%);
+  -webkit-box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.1); 
+  box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.1);
+
 }
 .left {
   text-align: left;

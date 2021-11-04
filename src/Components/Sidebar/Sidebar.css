@@ -1,15 +1,12 @@
 .sidebar {
-    /* align-self: center; */
     display: grid;
     overflow: auto;
     width: 100%;
     justify-content: center;
-    flex-direction: column;
 }
 .sidebar::-webkit-scrollbar {
     display:none;
 }
-
 .side-center{
     display: flex;
     width: 100%;
@@ -18,7 +15,6 @@
 .side-center::-webkit-scrollbar {
     display:none;
 }
-
 .sidebar ul {
     display: flex;
     overflow: auto;
@@ -29,7 +25,6 @@
 .sidebar ul::-webkit-scrollbar {
     display:none;
 }
-
 .sidebar li {
     margin: 10px 20px;
     text-align: left;
@@ -39,7 +34,7 @@
 }
 form {
     width:90%;
-    margin: 0 auto;
+    margin: 0 auto 7% auto;
 }
 .addCrypto {
     border: none;

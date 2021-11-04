@@ -29,12 +29,10 @@
     justify-content: space-between;
 }
 .live-image {
-    /* background-color: #121E29; */
     border-bottom-right-radius: 20%;
     position: absolute;
     left: 26px;
     top: 15px;
-    /* padding: 11px; */
 }
 .small-detail-info {
     font-size: 1em;
@@ -73,7 +71,15 @@ input::placeholder {
 }
 
 .amount-input {
-    margin-bottom: 20px;
+    margin-bottom: 5%;
+}
+.instructions {
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin: 20px 20px;
+}
+.green{
+    color: #24C7A2;
 }
 
 @media only screen and (min-width: 750px) {

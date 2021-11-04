@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Timeslot from "../Timeslot/Timeslot"
 
 const Content = (props) => {
-    const [inputAmount, setInputAmount] = useState();
+    const [inputAmount, setInputAmount] = useState('');
     const [sendAmount, setSendAmount] = useState();
     const [liveBlockDetails, setLiveBlockDetails] = useState({})
     const indvApiCall = () => {
@@ -72,7 +72,7 @@ const Content = (props) => {
                         <div className="live-price-block grad">
                             <h1>${livePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
                             <div className="market">
-                                <p className="small-detail-info left">ATH: ${ath}</p>
+                                <p className="small-detail-info left">ATH: ${ath.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                                 <h3 className="right">{liveName} ({liveSymbol})</h3>
                             </div>
                             <div className="market">
@@ -82,15 +82,23 @@ const Content = (props) => {
                         </div>
                     </div>
                     <div className="amount-input">
-                        <p className="how-much">{error ? 'How much did you miss out on?' : 'Please enter a valid number'}</p>
+                        <p className="how-much">{error ? 'Enter a dollar amount that represents your imaginary investment.' : 'Please enter a valid number'}</p>
                         <form onSubmit={handleSubmitAmount}>
-                            <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter an amount" />
+                            <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter amount" />
                             {/* <button className="grad" onClick={handleSubmitAmount}>Enter</button> */}
                         </form>
                     </div>
                     <div>
                         {showTimeslots ? 
-                        <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
+                        <>
+                            <div className="instructions grad">
+                                <h3>The breakdowns below show what your <span className="green">${inputAmount}</span> investment in <span className="green">{liveName}</span> would be worth today depending on when you bought in.</h3>
+                            </div>
+                                <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
+                            <div className="instructions grad">    
+                                <h3>Any regrets?</h3>
+                            </div>
+                        </>
                         : ''
                         }
                     </div>

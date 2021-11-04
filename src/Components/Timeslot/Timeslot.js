@@ -38,10 +38,10 @@ const Timeslot = (props) => {
     const yearVariables = {time: 'Year', gainLoss: yearGainLoss, totalValue: yearTotalValue, tokenAmount: yearTokens}
     //Array of time objects
     const timeVariablesArray = [dayVariables, weekVariables, monthVariables, yearVariables]
-    const timeVariablesMap = timeVariablesArray.map((item) => {
+    const timeVariablesMap = timeVariablesArray.map((item, index) => {
         return(
-            <div className="price-block grad">
-                <h2>{item.time} Ago</h2>
+            <div key={index} className="price-block grad">
+                <h2>A {item.time} Ago</h2>
                 <div className="info">
                     <h2 style={item.gainLoss > 0 ? {color:'#24C7A2'} : {color:'#BC353B'}}>${item.gainLoss.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h2>
                     <p>{item.gainLoss > 0 ? 'Gained' : 'Lost'}</p>

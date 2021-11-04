@@ -1,4 +1,18 @@
 .intro-wrapper {
     margin: 5% auto;
-    width: 75%;
+    width: 70%;
+    border-radius: 20px;
+    padding: 15px 25px 15px 15px;
+    /* margin: 20px 10px; */
 }
+.intro-wrapper h2 {
+    font-size: 1.2em;
+}
+@media only screen and (min-width: 750px) {
+    .intro-wrapper h2 {
+        font-size: 1.5em;
+    }
+}
+/* h2 {
+    font-size: 1.5em;
+} */

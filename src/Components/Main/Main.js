@@ -18,7 +18,7 @@ const Main = (props) => {
         makeApiCall()
     }, [])
     const singleCrypto = sym
-    const [inputCrypto, setInputCrypto] = useState();
+    const [inputCrypto, setInputCrypto] = useState('');
     const [searchCrypto, setSearchCrypto] = useState(false)
     const [validCrypto, setValidCrypto] = useState([]);
     const handleAddCrypto = (event) => {
@@ -55,6 +55,7 @@ const Main = (props) => {
     return (
         <div className="main">
             <Sidebar sym={sym} searchError={searchError} validCrypto={validCrypto} coinList={coinList}  inputCrypto={inputCrypto} searchCrypto={searchCrypto} handleAddCrypto={handleAddCrypto} handleCryptoChange={handleCryptoChange} handleSubmitCrypto={handleSubmitCrypto} />
+            {/* might need to put a ternary here to prevent a 404 error */}
             <Content singleCrypto={singleCrypto} handleMoney={props.handleMoney}/>
         </div>
     )
