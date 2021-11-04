@@ -18,14 +18,10 @@ function App() {
         </ul>
       </nav>
       <main>
-          {/* Route to homepage */}
           <Route exact path="/" render={(routerProps) => <Main {...routerProps} />}/>
           <Route exact path="/" component={Intro} />
-          {/* <Route exact path="/" component={Intro}/> */}
           <Route exact path="/:sym" render={(routerProps) => <Main {...routerProps} />}/>
-          {/* Route to About page */}
           <Route exact path="/about" component={About}/>
-          {/* Route to Contact page */}
           <Route exact path="/contact" component={Contact}/>
       </main>
       <Footer />
