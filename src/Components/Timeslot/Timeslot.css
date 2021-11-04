@@ -9,6 +9,24 @@
     margin: 20px 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.got-damb {
+    background-color: #da333c;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-weight: 900;
+    -webkit-box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.1); 
+    box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.1);
+}
+.got-damb p{
+    padding: 2px 0 0 0;
+    transform: rotate(25deg);
 }
 .tokens {
     font-weight: 700;

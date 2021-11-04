@@ -92,7 +92,7 @@ const Content = (props) => {
                         {showTimeslots ? 
                         <>
                             <div className="instructions grad">
-                                <h3>The breakdowns below show what your <span className="green">${inputAmount}</span> investment in <span className="green">{liveName}</span> would be worth today depending on when you bought in.</h3>
+                                <h3>The breakdowns below show what your <span className="green">${inputAmount}</span> investment in <span className="green">{liveName}</span> would be worth today depending on when you bought it.</h3>
                             </div>
                                 <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
                             <div className="instructions grad">    

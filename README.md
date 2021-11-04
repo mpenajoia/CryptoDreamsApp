@@ -137,8 +137,12 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Priority | Estimated Time | Time Invested |
 | --- | :---: |  :---: | :---: | 
 | Ability for user to search for their own crypto | H | 6hrs|  3hrs | 
-| Some easter eggs | H | 2hrs|  .5hrs |  
-| Total | H | 8hrs| 3.5hrs |
+| Some easter eggs | L | 2hrs|  .5hrs |
+| Final tweaks | M | 3hrs | 3hrs |  
+| Total | H | 11hrs| 6.5hrs |
+
+
+Total time: 31.5hrs
 
 
 ## Inspiration
