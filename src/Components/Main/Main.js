@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import { useParams } from "react-router"
 
 const Main = (props) => {
+    
     let { sym } = useParams();
     const [coinList, setCoinList] = useState([])
     const makeApiCall = () => {

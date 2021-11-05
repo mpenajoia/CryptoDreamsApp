@@ -7,14 +7,13 @@ const Content = (props) => {
     const [sendAmount, setSendAmount] = useState();
     const [liveBlockDetails, setLiveBlockDetails] = useState({})
     const indvApiCall = () => {
-        if(props.singleCrypto !== 'about' && props.singleCrypto !== 'contact' && props.singleCrypto){
+        // if(props.singleCrypto !== 'about' && props.singleCrypto !== 'contact'){
         fetch(`https://api.coingecko.com/api/v3/coins/${props.singleCrypto}`)
         .then(response => response.json())
-        .then(data => setLiveBlockDetails(data))
-        }
+        .then(data => setLiveBlockDetails(data));
     }
     useEffect(() => {
-        indvApiCall()
+        indvApiCall(); 
     }, [props.singleCrypto] )
     let liveImage 
     let livePrice
