@@ -87,7 +87,6 @@ const Content = (props) => {
                         <p className="how-much">{error ? 'Enter a dollar amount that represents your imaginary investment.' : 'Please enter a valid number'}</p>
                         <form onSubmit={handleSubmitAmount}>
                             <input onChange={handleOnChange} value={inputAmount} type="text" placeholder="enter amount" />
-                            {/* <button className="grad" onClick={handleSubmitAmount}>Enter</button> */}
                         </form>
                     </div>
                     <div>
@@ -97,9 +96,11 @@ const Content = (props) => {
                                 <h3>The breakdowns below show what your <span className="green">${inputAmount}</span> investment in <span className="green">{liveName}</span> would be worth today depending on when you bought it.</h3>
                             </div>
                                 <Timeslot sendAmount={sendAmount} liveBlockDetails={liveBlockDetails}/>
-                            <div className="instructions grad">    
-                                <h3>Any regrets?</h3>
-                            </div>
+                            <a href="https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know" target="_blank" rel="noopener noreferrer" >
+                                <div className="instructions grad">    
+                                    <h3>Any regrets?</h3>
+                                </div>
+                            </a>
                         </>
                         : ''
                         }

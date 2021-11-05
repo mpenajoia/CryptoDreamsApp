@@ -37,8 +37,6 @@ const Timeslot = (props) => {
     const monthVariables = {time: 'Month', gainLoss: monthGainLoss, totalValue: monthTotalValue, tokenAmount: monthTokens}
     const yearVariables = {time: 'Year', gainLoss: yearGainLoss, totalValue: yearTotalValue, tokenAmount: yearTokens}
     //Array of time objects
-
-
     const timeVariablesArray = [dayVariables, weekVariables, monthVariables, yearVariables]
     const timeVariablesMap = timeVariablesArray.map((item, index) => {
         return(
